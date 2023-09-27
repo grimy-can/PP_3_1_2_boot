@@ -12,6 +12,7 @@
         <h4><p th:text="'Род занятий: ' + ${user.getOccupation()}">VALUE</p></h4>
         <h4><p th:text="'В живых: ' + ${user.getIsAlive()}">VALUE</p></h4>
         <h4><p th:text="'Регистрация: ' + ${user.getRegdate()}">VALUE</p></h4>
+        <h4><p th:text="'Изменён: ' + ${user.getEdited()}">VALUE</p></h4>
         <hr>
         <form th:action="@{/users}" th:method="GET">
         <input type="submit" value="Назад" />

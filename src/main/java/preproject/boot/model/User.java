@@ -38,4 +38,6 @@ public class User {
     @Column(name = "regdate")
     private String regdate;
 
+    @Column(name = "edited")
+    private String edited;
 }

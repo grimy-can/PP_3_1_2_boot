@@ -2,7 +2,9 @@ package preproject.boot.service;
 
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import preproject.boot.config.ConfigProperties;
 import preproject.boot.model.User;
 import preproject.boot.repository.UserRepository;
 import java.time.LocalDateTime;
@@ -15,10 +17,10 @@ import java.util.logging.Logger;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
 
-
     private static final Logger logger = Logger.getLogger(UserServiceImpl.class.getName());
+    private DateTimeFormatter formatter;
     private final UserRepository userRepository;
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
 
     @Override
     public void addUser(User user) {
@@ -29,6 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(User user) {
+        user.setEdited(formatter.format(LocalDateTime.now()));
         userRepository.save(user);
         logger.info("updated: " + user.getAlias());
     }

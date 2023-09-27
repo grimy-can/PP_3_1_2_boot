@@ -26,8 +26,7 @@ public class UserController {
 
     @GetMapping(value = "/users")
     public String getUsers(ModelMap model, @RequestParam(value = "count", required = false ) String number) {
-        List<User> list = service.getUsers();
-        model.addAttribute("users", list);
+        model.addAttribute("users", service.getUsers());
         return "users";
     }
 
@@ -75,7 +74,6 @@ public class UserController {
 
     @PostMapping("/del_user")
     public String deleteUser(@RequestParam(value = "id") String id) {
-
         Optional<User> optionalUser = service.getUser(Integer.parseInt(id));
         service.deleteUser(optionalUser.get());
         return "redirect:/users";
