@@ -2,15 +2,16 @@ package preproject.boot.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "user")
+@Builder
 public class User {
 
     @Id
@@ -40,4 +41,5 @@ public class User {
 
     @Column(name = "edited")
     private String edited;
+
 }

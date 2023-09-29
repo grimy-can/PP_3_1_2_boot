@@ -19,6 +19,6 @@ public class ConfigProperties {
     @Bean
     public DateTimeFormatter getDateTimeFormatter(){
         return  DateTimeFormatter.ofPattern(formatDateTime);
-    };
+    }
 
 }

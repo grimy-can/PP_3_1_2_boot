@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import preproject.boot.model.User;
 import preproject.boot.service.UserService;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -41,7 +40,7 @@ public class UserController {
     }
 
     @GetMapping("/new")
-    public String getNewUserForm(Model model) {
+    public String getNewUserPage(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("localDateTime", LocalDateTime.now());
         return "new";
@@ -54,7 +53,7 @@ public class UserController {
     }
 
     @PostMapping("/edit_user")
-    public String editUser(@RequestParam(value = "id") String id, Model model) {
+    public String getEditUserPage(@RequestParam(value = "id") String id, Model model) {
 
         Optional<User> optionalUser = service.getUser(Integer.valueOf(id));
         if (!optionalUser.isPresent()) {

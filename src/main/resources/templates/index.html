@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
 <head>
+        <style>
+                h2 {
+                        width: 350px;
+                        animation-name: text;
+                        animation-duration: 4s;
+                        animation-iteration-count: initial;
+                }
+
+                #one {
+                        animation-timing-function: ease;
+                }
+
+                @keyframes text {
+                        from {
+                                margin-left: 90%;
+                        }
+
+                        to {
+                                margin-left: 0%;
+                        }
+                }
+        </style>
 <meta charset="UTF-8">
 <title>Task</title>
         <style type="text/css">
@@ -16,9 +38,9 @@
         <tr>
                 <td class="leftcol"><img th:src="@{/images/pre_project.jpg}" height="64" alt="kata"/></td>
                 <td valign="top">
-                        <h5 style="color:Gray;">Курсы / Java pre-project / Spring Boot, Spring Security и REST</h5>
+                        <h4 style="color:Gray;">Курсы / Java pre-project / Spring Boot, Spring Security и REST</h4>
                         <h3>Java pre-project. Практическая задача 3.1.2</h3>
-                        <p>1. Необходимо перенести ваше CRUD-приложение на Spring Boot.</p></td>
+                        <h4 id="one">1. Необходимо перенести ваше CRUD-приложение на Spring Boot.</h4>
                 <td class="leftcol"><img th:src="@{/images/student.png}" height="64" alt="student"/></td>
         </tr>
 </table>

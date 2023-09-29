@@ -2,9 +2,7 @@ package preproject.boot.service;
 
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import preproject.boot.config.ConfigProperties;
 import preproject.boot.model.User;
 import preproject.boot.repository.UserRepository;
 import java.time.LocalDateTime;
